@@ -1,0 +1,188 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f9f2; /* Light green background */
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden; /* Prevent overflow caused by animations */
+}
+
+h1 {
+    text-align: center;
+    color: #66bb6a;
+    text-shadow: 0 0 10px rgba(102, 187, 106, 0.8), 0 0 20px rgba(129, 199, 132, 0.5);
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    animation: pixie-dust 2s infinite alternate;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 0 15px #81c784;
+    animation: pixie-dust 3s infinite;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+table th {
+    background-color: #66bb6a;
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #4caf50;
+}
+
+table td {
+    color: #388e3c;
+    border-bottom: 1px solid #c8e6c9;
+}
+
+table tr:hover {
+    background-color: #d9f2d9;
+    animation: flower-border 1.5s forwards;
+    cursor: pointer;
+    position: relative;
+}
+
+table tr:hover:before, table tr:hover:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #66bb6a, transparent);
+    top: -4px;
+    animation: pixie-line 1s infinite alternate;
+}
+
+table tr:hover:after {
+    bottom: -4px;
+    top: auto;
+    background: linear-gradient(90deg, transparent, #66bb6a);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #66bb6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2px solid #4caf50;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #81c784;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #66bb6a, 0 0 40px #81c784;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #e8f5e9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: flower-grow 3s infinite alternate;
+}
+
+form input, form button {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #c8e6c9;
+    font-size: 1rem;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #66bb6a;
+    box-shadow: 0 0 15px #66bb6a;
+}
+
+form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+    background-color: #81c784;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #66bb6a, 0 0 30px #81c784;
+}
+
+/* Center Save Button */
+form button {
+    margin: 20px auto; /* Center the button */
+    display: block;
+    width: fit-content;
+    padding: 10px 40px; /* Adjusted padding for a better look */
+}
+
+/* Pixie Dust Animation */
+@keyframes pixie-dust {
+    0%, 100% {
+        text-shadow: 0 0 5px #66bb6a, 0 0 10px #81c784;
+    }
+    50% {
+        text-shadow: 0 0 20px #4caf50, 0 0 40px #66bb6a;
+    }
+}
+
+/* Growing Flower Border Animation */
+@keyframes flower-border {
+    0% {
+        border: 1px solid transparent;
+        box-shadow: 0 0 0px #a5d6a7;
+    }
+    100% {
+        border: 3px solid #66bb6a;
+        box-shadow: 0 0 15px #81c784, inset 0 0 5px #e8f5e9;
+    }
+}
+
+/* Flower Grow Animation for Form */
+@keyframes flower-grow {
+    0% {
+        box-shadow: 0 0 5px #66bb6a, inset 0 0 2px #e8f5e9;
+    }
+    50% {
+        box-shadow: 0 0 15px #81c784, inset 0 0 8px #c8e6c9;
+    }
+    100% {
+        box-shadow: 0 0 30px #4caf50, inset 0 0 15px #a5d6a7;
+    }
+}
+
+/* Pixie Line Animation */
+@keyframes pixie-line {
+    0% {
+        opacity: 0.2;
+        transform: scaleX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
